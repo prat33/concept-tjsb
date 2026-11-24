@@ -156,7 +156,10 @@ table{border-collapse:collapse;width:100%}
 /* ---------- header ---------- */
 .header{position:sticky;top:0;z-index:100;background:rgba(251,245,233,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
 .header[data-stuck="true"]{border-color:var(--line);box-shadow:0 10px 40px -18px rgba(74,45,30,.3)}
-.header .wrap{display:flex;align-items:center;gap:1.4rem;height:4.7rem}
+/* `>` matters: the mobile drawer is also inside .header and has its own .wrap.
+   A descendant selector here turned every drawer heading and link into one
+   fixed-height flex row, stacked on top of each other. */
+.header>.wrap{display:flex;align-items:center;gap:1.4rem;height:4.7rem}
 /* The bank's own mark, used as supplied — never redrawn or recoloured.
    assets/tjsb-logo.png is the official lockup from tjsb.bank.in (176x65),
    which already carries the "Bharose ka Bank Bhavishya ka Bank" tagline. */
@@ -191,7 +194,7 @@ table{border-collapse:collapse;width:100%}
 @media (max-width:1140px){.burger{display:block}.header-cta .btn-outline{display:none}}
 .cta-short{display:none}
 @media (max-width:620px){
-  .header .wrap{gap:.6rem;height:4.1rem}
+  .header>.wrap{gap:.6rem;height:4.1rem}
   .brand img{height:2.3rem}
   .header-cta{margin-left:auto}
   .header-cta .btn{padding:.48rem .72rem;font-size:.8rem}
