@@ -337,6 +337,21 @@ table{border-collapse:collapse;width:100%}
 .way ul li{font-size:.8rem;color:var(--muted);display:flex;gap:.45rem;align-items:baseline}
 .way ul li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--line-2);flex:none;transform:translateY(-2px)}
 
+/* ---------- campaigns (the bank's own creatives, used as published) ---------- */
+.camp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}
+@media (max-width:900px){.camp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.camp-grid{grid-template-columns:1fr}}
+.camp{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .22s,transform .22s var(--ease)}
+.camp:hover{border-color:var(--line-2);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+/* height:auto matters — with the HTML height="450" attribute left in play the
+   used height is 450px, aspect-ratio is ignored (it only applies when one axis
+   is auto) and object-fit crops the creative to a narrow slice. */
+.camp img{width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;background:var(--paper-2);border-bottom:1px solid var(--line)}
+.camp .body{padding:1.1rem 1.2rem 1.25rem}
+.camp .tag{display:block;font-size:.64rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brick);margin-bottom:.45rem}
+.camp .t{font-size:.95rem;font-weight:600;color:var(--bark);line-height:1.4}
+.camp .d{font-size:.83rem;color:var(--ink-2);margin-top:.35rem;line-height:1.55}
+
 /* ---------- notices ---------- */
 .notice-grid{display:grid;grid-template-columns:1fr .9fr;gap:clamp(2rem,4vw,4rem);align-items:start}
 @media (max-width:920px){.notice-grid{grid-template-columns:1fr}}
@@ -405,6 +420,44 @@ table{border-collapse:collapse;width:100%}
 .footer-bottom{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center;padding-block:1.5rem}
 .footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.5)}
 .footer-bottom ul{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.78rem}
+
+/* ---------- assistant launcher ----------
+   The live site runs PAi, NPCI's assistant, through a third-party CoRover
+   script. That script is deliberately NOT embedded here: this is the entry
+   point redesigned in the house style, and it sends nothing anywhere. */
+/* The launcher is NPCI's own PAi bubble, used as supplied — the mark is already
+   a speech bubble, so it is the button rather than sitting inside one. Card
+   ground and a thin brick rule, no fill. */
+.chat-launch{position:fixed;right:1.25rem;bottom:1.25rem;z-index:150;padding:0;background:none;border:0;border-radius:10px;line-height:0;transition:transform .2s var(--ease)}
+.chat-launch:hover{transform:translateY(-2px)}
+/* NPCI's PAi bubble is the button — no plate behind it. The mark's own outline
+   has been recoloured to brick in assets/pai-icon.png; the wordmark and the
+   tricolour arrow are untouched. 92px matches the live site's widget. */
+.chat-launch img{width:92px;height:auto;display:block}
+.chat-panel{position:fixed;right:1.25rem;bottom:6.1rem;z-index:151;width:22rem;max-width:calc(100vw - 2.5rem);background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-lg);overflow:hidden;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s,transform .22s var(--ease),visibility .2s}
+.chat-panel[data-open="true"]{opacity:1;visibility:visible;transform:none}
+@media (prefers-reduced-motion:reduce){.chat-panel{transition:none}}
+.chat-head{background:var(--bark);color:#fff;padding:.9rem 1.05rem;display:flex;align-items:center;gap:.7rem}
+.chat-avatar{width:auto;height:1.75rem;flex:none;display:block}
+.chat-head b{display:block;font-size:.92rem;font-weight:600;line-height:1.2}
+.chat-head .sub{display:block;font-size:.71rem;color:rgba(255,255,255,.6);margin-top:.1rem}
+.chat-close{margin-left:auto;display:grid;place-items:center;color:rgba(255,255,255,.7);padding:.3rem;border-radius:var(--r-sm);transition:color .16s,background .16s}
+.chat-close:hover{color:#fff;background:rgba(255,255,255,.12)}
+.chat-body{padding:1.05rem;background:var(--paper);max-height:17rem;overflow-y:auto}
+.chat-thread{display:flex;flex-direction:column;gap:.55rem}
+.chat-msg{max-width:92%;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);border-top-left-radius:3px;padding:.75rem .9rem;font-size:.86rem;color:var(--ink-2);line-height:1.55}
+.chat-msg.me{margin-left:auto;background:var(--bark);border-color:var(--bark);color:#fff;border-radius:var(--r-md);border-top-right-radius:3px;border-top-left-radius:var(--r-md)}
+.chat-sugg{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
+.chat-sugg button{font-size:.79rem;padding:.4rem .7rem;border:1px solid var(--line-2);border-radius:999px;background:var(--card);color:var(--bark);transition:border-color .16s,background .16s}
+.chat-sugg button:hover{border-color:var(--brick);background:var(--brick-wash)}
+.chat-foot{padding:.8rem 1.05rem .9rem;border-top:1px solid var(--line);background:var(--card)}
+.chat-foot input{width:100%;padding:.58rem .75rem;border:1px solid var(--line);border-radius:var(--r-sm);font:inherit;font-size:.84rem;background:var(--paper-2);color:var(--muted)}
+.chat-note{font-size:.69rem;color:var(--muted);margin-top:.5rem;line-height:1.45}
+@media (max-width:520px){
+  .chat-panel{left:1rem;right:1rem;width:auto;bottom:5.9rem}
+  .chat-launch{right:1rem;bottom:1rem}
+  .chat-body{max-height:14rem}
+}
 
 /* ---------- concept notice ---------- */
 .concept{background:#20130b;color:rgba(255,255,255,.62);font-size:.76rem;line-height:1.6;padding:1.1rem 0;border-top:1px solid rgba(255,255,255,.1)}
@@ -994,12 +1047,12 @@ table{border-collapse:collapse;width:100%}
     <p class="lead" style="margin-top:1.2rem" data-reveal>The first branch of Thane Janata Sahakari Bank opened in 1972. Five decades on, TJSB Sahakari Bank Ltd is one of the country&#8217;s larger multi-state scheduled co-operative banks — still governed by its members, still audited and supervised under the co-operative framework.</p>
 
     <dl class="num-grid">
-      <div class="num" data-reveal><dt><span class="k">Branches</span><span class="d">Across the states it operates in</span></dt><dd><b class="tnum">172</b></dd></div>
+      <div class="num" data-reveal><dt><span class="k">Branches</span><span class="d">Across seven states</span></dt><dd><b class="tnum">172</b></dd></div>
       <div class="num" data-reveal><dt><span class="k">Business mix</span><span class="d">Deposits and advances together</span></dt><dd><b class="tnum"><em>&#8377;</em>25,360<span style="font-size:.5em"> Cr</span></b></dd></div>
       <div class="num" data-reveal><dt><span class="k">Deposits</span><span class="d">Held on behalf of customers</span></dt><dd><b class="tnum"><em>&#8377;</em>16,244<span style="font-size:.5em"> Cr</span></b></dd></div>
       <div class="num" data-reveal><dt><span class="k">Net profit</span><span class="d">As reported by the bank</span></dt><dd><b class="tnum"><em>&#8377;</em>155<span style="font-size:.5em"> Cr</span></b></dd></div>
     </dl>
-    <p class="small" style="color:rgba(255,255,255,.45);margin-top:1.6rem">Figures as published by the bank under &#8220;Milestones&#8221;. Audited financials and the ten-year progress statement are in the Financials section.</p>
+    <p class="small" style="color:rgba(255,255,255,.45);margin-top:1.6rem">Figures as published by the bank under &#8220;Milestones&#8221;. Its audited-financials creative for 2025&#8211;26 instead gives 165 branches across seven states as at 31 March 2026, and adds advances of &#8377;9,116 Cr, owned funds of &#8377;1,773 Cr, gross NPA 3.11%, net NPA 0.00% and CRAR 16.89%. Both branch counts are the bank's own; neither has been adjusted here.</p>
   </div>
 </section>
 
@@ -1039,6 +1092,49 @@ table{border-collapse:collapse;width:100%}
         <p>Pay anyone with a UPI ID, collect with a personalised QR code, and settle utilities through BBPS in one place.</p>
         <ul><li>Personalised QR code</li><li>BBPS bill payments</li><li>UPI help centre</li></ul>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ campaigns ============ -->
+<section class="section" id="campaigns">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow" data-reveal>From the bank</p>
+        <h2 class="h2" data-reveal>What TJSB is telling customers right now</h2>
+      </div>
+      <p class="lead" data-reveal>The bank's own photographs, reproduced as published. On the current site these rotate through the top of the homepage every few seconds. Only the ones that actually show people are here — the text-only notices are set as real HTML further down instead, where they can be read and searched.</p>
+    </div>
+
+    <div class="camp-grid">
+      <article class="camp" data-reveal>
+        <img src="assets/campaigns/nafcub-award.webp" width="900" height="450" loading="lazy" decoding="async" alt="Chairman Sharad Gangal receiving a framed Certificate of Appreciation on stage from Union Cooperation and Home Minister Amit Shah, at an event organised by the National Urban Cooperative Finance and Development Corporation.">
+        <div class="body">
+          <span class="tag">Recognition</span>
+          <p class="t">A Certificate of Appreciation from NAFCUB</p>
+          <p class="d">Chairman Shri Sharad Gangal accepting the award from Union Cooperation and Home Minister Shri Amit Shah.</p>
+        </div>
+      </article>
+
+      <article class="camp" data-reveal>
+        <img src="assets/campaigns/kudal-branch.webp" width="900" height="450" loading="lazy" decoding="async" alt="Ribbon-cutting at the inauguration of the relocated Kudal branch, with District Collector Trupti Dhodmise and bank officials.">
+        <div class="body">
+          <span class="tag">Network</span>
+          <p class="t">The relocated Kudal branch opens</p>
+          <p class="d">Inaugurated by Smt. Trupti Dhodmise, I.A.S., District Collector of Sindhudurg, with the Chairman and the Managing Director.</p>
+        </div>
+      </article>
+
+      <article class="camp" data-reveal>
+        <img src="assets/campaigns/nomination.webp" width="900" height="450" loading="lazy" decoding="async" alt="Nomination campaign showing an older couple filling in a form, with the message 'Secure Their Tomorrow. Nominate Today.'">
+        <div class="body">
+          <span class="tag">Do this today</span>
+          <p class="t">Secure their tomorrow &#8212; nominate today</p>
+          <p class="d">Nomination covers savings and current accounts, term deposits, articles in safe custody and lockers.</p>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -1270,6 +1366,38 @@ table{border-collapse:collapse;width:100%}
   </div>
 </div>
 
+<button class="chat-launch" id="chat-launch" aria-expanded="false" aria-controls="chat-panel" aria-label="Ask PAi, the assistant">
+  <img src="assets/pai-icon.png" width="132" height="94" alt="" aria-hidden="true">
+</button>
+
+<div class="chat-panel" id="chat-panel" data-open="false" role="dialog" aria-labelledby="chat-title" aria-describedby="chat-note" tabindex="-1">
+  <div class="chat-head">
+    <img class="chat-avatar" src="assets/pai-icon.png" width="132" height="94" alt="" aria-hidden="true">
+    <span>
+      <b id="chat-title">PAi</b>
+      <span class="sub">Personal AI from NPCI</span>
+    </span>
+    <button class="chat-close" id="chat-close" aria-label="Close the assistant">
+      <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.5 5.5l9 9M14.5 5.5l-9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="chat-body" id="chat-body">
+    <div class="chat-thread" id="chat-thread" aria-live="polite">
+      <p class="chat-msg">Hello &#8212; I&#8217;m PAi, the Personal AI from NPCI. On the live TJSB site I answer questions about UPI, digital payments and the bank&#8217;s services.</p>
+    </div>
+    <div class="chat-sugg" id="chat-sugg">
+      <button type="button">How do I register for UPI?</button>
+      <button type="button">A payment failed &#8212; what now?</button>
+      <button type="button">What are the FD rates?</button>
+      <button type="button">Find my nearest branch</button>
+    </div>
+  </div>
+  <div class="chat-foot">
+    <input type="text" disabled placeholder="Not connected in this concept" aria-label="Message the assistant. Disabled in this concept.">
+    <p class="chat-note" id="chat-note">The entry point, redesigned. The real PAi widget is not embedded, so nothing here is sent anywhere.</p>
+  </div>
+</div>
+
 <script>
 (function(){
   "use strict";
@@ -1357,6 +1485,30 @@ table{border-collapse:collapse;width:100%}
       if (n < 0 || n >= tabs.length) return;
       e.preventDefault(); tabs[n].focus(); select(tabs[n]);
     });
+  });
+
+  /* ---- assistant launcher: opens a redesigned panel, connected to nothing ---- */
+  var cLaunch = document.getElementById("chat-launch"),
+      cPanel  = document.getElementById("chat-panel"),
+      cThread = document.getElementById("chat-thread"),
+      cBody   = document.getElementById("chat-body");
+  function setChat(open){
+    cPanel.dataset.open = open ? "true" : "false";
+    cLaunch.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open) cPanel.focus(); else cLaunch.focus();
+  }
+  cLaunch.addEventListener("click", function(){ setChat(cPanel.dataset.open !== "true"); });
+  document.getElementById("chat-close").addEventListener("click", function(){ setChat(false); });
+  cPanel.addEventListener("keydown", function(e){ if (e.key === "Escape") { e.stopPropagation(); setChat(false); } });
+  document.getElementById("chat-sugg").addEventListener("click", function(e){
+    var b = e.target.closest("button"); if (!b) return;
+    var me = document.createElement("p");
+    me.className = "chat-msg me"; me.textContent = b.textContent;
+    var bot = document.createElement("p");
+    bot.className = "chat-msg";
+    bot.textContent = "In this concept the assistant isn't connected, so I can't answer. On the live site PAi would pick this up.";
+    cThread.appendChild(me); cThread.appendChild(bot);
+    cBody.scrollTop = cBody.scrollHeight;
   });
 
   /* ---- EMI calculator ---- */
