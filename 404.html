@@ -1,0 +1,1385 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow"><script>if(location.hostname.endsWith("github.io"))location.replace("https://concepts.pulplabs.ai/tjsb/");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>TJSB Sahakari Bank — Bharosa ka Bank, Bhavishya ka Bank</title>
+<meta name="description" content="A redesign concept. TJSB Sahakari Bank Ltd is a multi-state scheduled co-operative bank, established 1972 — 172 branches and deposits of Rs 16,244 crore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<script>
+/* motion: progressive enhancement. Every hidden state is scoped to .motion-ok,
+   and a 3s failsafe strips it if the motion code never starts — so the page
+   can never be left blank. */
+(function(){try{
+  var d=document.documentElement;
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('motion-ok');}
+  setTimeout(function(){if(!window.__motionReady){d.classList.remove('motion-ok');}},3000);
+}catch(e){}})();
+</script>
+<style>
+/* ============================================================
+   TJSB Sahakari Bank — homepage redesign concept
+   PulpLabs house style (after vvce.pulplabs.ai): warm paper ground,
+   a display serif over a humanist sans, one dark brand ground.
+   Retuned for a bank, and warmed all the way through — espresso bark
+   in place of crest navy, the TJSB mark's red pulled toward terracotta
+   brick, ochre as the second accent, and motion cut back to soft
+   reveals and hover states.
+   ============================================================ */
+
+:root{
+  --paper:#fbf5e9;
+  --paper-2:#f4e9d6;
+  --card:#fffdf7;
+  --bark:#2d1b12;
+  --bark-2:#46291a;
+  --bark-3:#6b4228;
+  --sand-wash:#f5e3cb;
+  --ink:#2b2019;
+  --ink-2:#5c4a3d;
+  --muted:#7a6654;
+  --line:#ebdec7;
+  --line-2:#ddcaa9;
+  --brick:#a5331c;
+  --brick-2:#80250f;
+  --brick-wash:#fae5d7;
+  --amber:#b06a12;
+  --amber-wash:#fbe9cd;
+  --sand:#f0b57e;
+  --sage:#adc188;
+  --green:#5a6b2a;
+  --green-wash:#eaefd6;
+
+  --r-sm:6px; --r-md:10px; --r-lg:14px; --r-xl:20px;
+  --gutter:clamp(1.25rem,.6rem + 2.6vw,3rem);
+  --section:clamp(4rem,2.8rem + 5vw,7.5rem);
+  --maxw:84rem;
+
+  --font-display:"Newsreader",ui-serif,Georgia,"Times New Roman",serif;
+  --font-sans:"Hanken Grotesk",ui-sans-serif,system-ui,-apple-system,sans-serif;
+
+  --text-hero:clamp(2.4rem,1.5rem + 3.4vw,4.3rem);
+  --text-h2:clamp(1.85rem,1.3rem + 1.9vw,2.9rem);
+  --text-h3:clamp(1.18rem,1.05rem + .55vw,1.45rem);
+  --text-lead:clamp(1.02rem,.96rem + .3vw,1.18rem);
+
+  --ease:cubic-bezier(.16,1,.3,1);
+  --shadow-sm:0 1px 2px rgba(74,45,30,.05),0 2px 8px rgba(74,45,30,.04);
+  --shadow-md:0 2px 4px rgba(74,45,30,.05),0 14px 30px -10px rgba(74,45,30,.14);
+  --shadow-lg:0 4px 8px rgba(74,45,30,.06),0 30px 60px -28px rgba(74,45,30,.3);
+}
+
+*,*::before,*::after{box-sizing:border-box;min-width:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-sans);font-size:1rem;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:clip;
+}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:500;letter-spacing:-.013em;line-height:1.1;text-wrap:balance;margin:0}
+p{margin:0;text-wrap:pretty}
+a{color:inherit;text-decoration:none}
+ul,ol,dl,dd{margin:0;padding:0;list-style:none}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+table{border-collapse:collapse;width:100%}
+:focus-visible{outline:2.5px solid var(--brick);outline-offset:3px;border-radius:4px}
+::selection{background:var(--amber-wash)}
+.tnum{font-variant-numeric:tabular-nums}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:var(--gutter);top:-100px;z-index:300;background:var(--bark);color:#fff;padding:.7rem 1.1rem;border-radius:var(--r-sm);font-size:.9rem;font-weight:600;transition:top .2s}
+.skip:focus{top:.6rem}
+
+/* ---------- reveals ---------- */
+.motion-ok [data-reveal]{opacity:0;transform:translate3d(0,14px,0)}
+[data-reveal]{transition:opacity .55s ease-out,transform .55s var(--ease)}
+[data-reveal].is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1!important;transform:none!important;transition:none}
+  .ticker-track{animation:none!important}
+}
+
+/* ---------- type helpers ---------- */
+.eyebrow{font-size:.71rem;font-weight:600;letter-spacing:.19em;text-transform:uppercase;color:var(--brick);margin:0}
+.eyebrow.on-dark{color:var(--sand)}
+.lead{font-size:var(--text-lead);color:var(--ink-2);line-height:1.62}
+.h2{font-size:var(--text-h2);color:var(--bark)}
+.h3{font-size:var(--text-h3)}
+.small{font-size:.82rem;color:var(--muted);line-height:1.55}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.82rem 1.4rem;border-radius:var(--r-sm);
+  font-size:.925rem;font-weight:600;letter-spacing:-.004em;
+  border:1px solid transparent;
+  transition:background .18s,color .18s,border-color .18s,box-shadow .2s;
+}
+.btn svg{flex:none;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-primary{background:var(--brick);color:#fff;box-shadow:0 1px 2px rgba(128,37,15,.3)}
+.btn-primary:hover{background:var(--brick-2)}
+.btn-ghost{border-color:rgba(255,255,255,.32);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.55)}
+.btn-outline{border-color:var(--line-2);color:var(--bark);background:var(--card)}
+.btn-outline:hover{border-color:var(--bark);box-shadow:var(--shadow-sm)}
+.btn-sm{padding:.52rem .9rem;font-size:.85rem}
+.btn-block{width:100%}
+
+.arrow-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.875rem;font-weight:600;color:var(--bark)}
+.arrow-link svg{transition:transform .25s var(--ease)}
+.arrow-link:hover svg{transform:translateX(3px)}
+.arrow-link.on-dark{color:var(--sand)}
+
+/* ---------- utility bar ---------- */
+.utility{background:var(--bark);color:rgba(255,255,255,.8);font-size:.79rem}
+.utility .wrap{display:flex;align-items:center;gap:1.5rem;height:2.6rem}
+.ticker{flex:1;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 3rem,#000 calc(100% - 3rem),transparent);mask-image:linear-gradient(90deg,transparent,#000 3rem,#000 calc(100% - 3rem),transparent)}
+.ticker-track{display:flex;width:max-content;animation:scroll 60s linear infinite}
+.ticker-track>span{padding-inline:1.6rem;white-space:nowrap;display:inline-flex;align-items:center;gap:.55rem}
+.ticker-track b{font-weight:600;color:var(--sand);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase}
+.ticker[data-paused="true"] .ticker-track,.ticker:hover .ticker-track,.ticker:focus-within .ticker-track{animation-play-state:paused}
+@keyframes scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.ticker-pause{flex:none;display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);padding:.3rem .5rem;border-radius:var(--r-sm);transition:color .16s,background .16s}
+.ticker-pause:hover{color:#fff;background:rgba(255,255,255,.1)}
+.util-links{display:flex;gap:1.3rem;flex:none}
+.util-links a{transition:color .16s}
+.util-links a:hover{color:#fff}
+@media (max-width:1080px){.util-links{display:none}}
+@media (max-width:620px){.ticker-pause{display:none}}
+
+/* ---------- header ---------- */
+.header{position:sticky;top:0;z-index:100;background:rgba(251,245,233,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.header[data-stuck="true"]{border-color:var(--line);box-shadow:0 10px 40px -18px rgba(74,45,30,.3)}
+.header .wrap{display:flex;align-items:center;gap:1.4rem;height:4.7rem}
+/* The bank's own mark, used as supplied — never redrawn or recoloured.
+   assets/tjsb-logo.png is the official lockup from tjsb.bank.in (176x65),
+   which already carries the "Bharose ka Bank Bhavishya ka Bank" tagline. */
+.brand{display:flex;align-items:center;flex:none}
+.brand img{height:3rem;width:auto}
+.nav{display:flex;align-items:center;gap:.1rem;margin-left:auto}
+.nav>li{position:static}
+.nav>li>a,.nav>li>button{display:flex;align-items:center;gap:.3rem;white-space:nowrap;padding:.56rem .74rem;border-radius:var(--r-sm);font-size:.915rem;font-weight:500;color:var(--ink-2);transition:color .16s,background .16s}
+.nav>li>a:hover,.nav>li>button:hover,.nav>li[data-open="true"]>button{color:var(--bark);background:rgba(74,45,30,.055)}
+.chev{transition:transform .22s var(--ease);opacity:.5}
+.nav>li[data-open="true"] .chev{transform:rotate(180deg)}
+.header-cta{display:flex;align-items:center;gap:.55rem;flex:none;margin-left:.5rem}
+
+.mega{position:absolute;left:0;right:0;top:100%;background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .22s var(--ease),visibility .2s}
+.nav>li[data-open="true"] .mega{opacity:1;visibility:visible;transform:translateY(0)}
+@media (hover:hover){
+  .nav>li:hover .mega{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav>li:hover>button{color:var(--bark);background:rgba(74,45,30,.055)}
+  .nav>li:hover .chev{transform:rotate(180deg)}
+}
+.mega-inner{max-width:var(--maxw);margin-inline:auto;padding:2.1rem var(--gutter) 2.4rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2.2rem}
+.mega h4{font-size:.68rem;font-family:var(--font-sans);font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--brick);margin-bottom:.85rem}
+.mega ul a{display:block;padding:.28rem 0;font-size:.89rem;color:var(--ink-2);transition:color .15s,padding-left .18s var(--ease)}
+.mega ul a:hover{color:var(--brick);padding-left:.3rem}
+.mega-feature{background:var(--paper-2);border-radius:var(--r-md);padding:1.5rem;border:1px solid var(--line);display:flex;flex-direction:column}
+.mega-feature .h3{color:var(--bark);margin-bottom:.45rem}
+.mega-feature p{font-size:.86rem;color:var(--ink-2)}
+.mega-feature .arrow-link{margin-top:auto;padding-top:1.2rem}
+@media (max-width:1140px){.nav{display:none}}
+
+.burger{display:none;margin-left:auto;padding:.56rem;border-radius:var(--r-sm);border:1px solid var(--line-2);color:var(--bark)}
+@media (max-width:1140px){.burger{display:block}.header-cta .btn-outline{display:none}}
+.cta-short{display:none}
+@media (max-width:620px){
+  .header .wrap{gap:.6rem;height:4.1rem}
+  .brand img{height:2.3rem}
+  .header-cta{margin-left:auto}
+  .header-cta .btn{padding:.48rem .72rem;font-size:.8rem}
+  .header-cta .btn svg{display:none}
+  .cta-long{display:none}
+  .cta-short{display:inline}
+}
+.drawer{display:none;border-top:1px solid var(--line);background:var(--card);max-height:72vh;overflow-y:auto}
+.drawer[data-open="true"]{display:block}
+.drawer .wrap{padding-block:1rem 2rem}
+.drawer h4{font-size:.67rem;font-family:var(--font-sans);font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--brick);margin:1.3rem 0 .4rem}
+.drawer a{display:block;padding:.48rem 0;font-size:.95rem;color:var(--ink-2);border-bottom:1px solid var(--line)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--bark);color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(85rem 45rem at 8% -15%,rgba(108,66,38,.92),transparent 62%),radial-gradient(55rem 35rem at 100% 115%,rgba(165,51,28,.38),transparent 60%)}
+.hero-grid{position:absolute;inset:0;opacity:.085;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:5.5rem 5.5rem;-webkit-mask-image:radial-gradient(75% 75% at 25% 15%,#000,transparent);mask-image:radial-gradient(75% 75% at 25% 15%,#000,transparent)}
+.hero-arcs{position:absolute;right:-16rem;top:-16rem;width:52rem;height:52rem;opacity:.07;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.3fr .8fr;gap:clamp(2.5rem,4vw,5rem);align-items:center;padding-block:clamp(3.2rem,2.5rem + 3.5vw,5.5rem)}
+.hero h1{font-size:var(--text-hero);color:#fff;letter-spacing:-.03em;line-height:1.05;margin-top:1.15rem}
+.hero h1 .accent{color:var(--sand)}
+.hero .lead{color:rgba(255,255,255,.78);margin-top:1.3rem;max-width:36rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.1rem}
+.trust{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2.5rem;padding-top:1.7rem;border-top:1px solid rgba(255,255,255,.14)}
+.chip{display:inline-flex;align-items:center;gap:.45rem;padding:.4rem .78rem;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);font-size:.775rem;font-weight:500;color:rgba(255,255,255,.88)}
+.chip svg{color:var(--sage);flex:none}
+@media (max-width:980px){.hero .wrap{grid-template-columns:1fr;padding-block:2.8rem 3.2rem}}
+
+/* rate card */
+.rate-card{background:var(--card);color:var(--ink);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);overflow:hidden}
+.rate-card-head{padding:1.1rem 1.45rem;background:var(--paper-2);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.rate-hero{padding:1.5rem 1.45rem 1.25rem;border-bottom:1px solid var(--line)}
+.rate-big{font-family:var(--font-display);font-size:3.5rem;line-height:.92;color:var(--bark);font-weight:600;letter-spacing:-.04em;display:flex;align-items:baseline;gap:.25rem}
+.rate-big sup{font-size:1.25rem;font-weight:500;letter-spacing:-.01em;top:-.12em;position:relative}
+.rate-rows{padding:.35rem 1.45rem 1rem}
+.rate-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.62rem 0;border-bottom:1px solid var(--line);font-size:.87rem}
+.rate-row:last-child{border-bottom:0}
+.rate-row span{color:var(--ink-2)}
+.rate-row b{font-weight:600;color:var(--bark);font-size:.95rem}
+.rate-foot{padding:.95rem 1.45rem;background:var(--paper-2);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+
+/* ---------- quick actions ---------- */
+.quick{background:var(--card);border-bottom:1px solid var(--line);position:relative;z-index:2}
+.quick .wrap{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));padding-inline:var(--gutter)}
+.qa{display:flex;flex-direction:column;align-items:flex-start;gap:.65rem;padding:1.7rem 1.1rem 1.6rem;border-right:1px solid var(--line);transition:background .18s;position:relative}
+.qa:first-child{border-left:1px solid var(--line)}
+.qa::after{content:"";position:absolute;left:-1px;right:-1px;bottom:0;height:2px;background:var(--brick);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.qa:hover{background:var(--paper)}
+.qa:hover::after{transform:scaleX(1)}
+.qa-icon{width:2.4rem;height:2.4rem;border-radius:var(--r-sm);background:var(--sand-wash);color:var(--bark);display:grid;place-items:center;transition:background .18s,color .18s}
+.qa:hover .qa-icon{background:var(--brick);color:#fff}
+.qa-label{font-size:.9rem;font-weight:600;color:var(--bark);line-height:1.3}
+.qa-sub{font-size:.755rem;color:var(--muted);line-height:1.4}
+@media (max-width:1080px){.quick .wrap{grid-template-columns:repeat(3,minmax(0,1fr))}.qa{border-bottom:1px solid var(--line)}.qa:nth-child(3n+1){border-left:1px solid var(--line)}}
+@media (max-width:620px){.quick .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.qa:nth-child(3n+1){border-left:0}.qa:nth-child(odd){border-left:1px solid var(--line)}.qa{padding:1.25rem .9rem}}
+
+/* ---------- section scaffolding ---------- */
+.section{padding-block:var(--section)}
+.section.alt{background:var(--paper-2);border-block:1px solid var(--line)}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem 2.5rem;margin-bottom:2.8rem}
+.section-head .h2{max-width:17ch;margin-top:.8rem}
+.section-head>p.lead{max-width:26rem}
+
+/* ---------- product explorer ---------- */
+.tabs{display:flex;gap:.28rem;padding:.3rem;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;width:max-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.section.alt .tabs{background:var(--card)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:.5rem 1.05rem;border-radius:999px;font-size:.875rem;font-weight:600;color:var(--ink-2);white-space:nowrap;transition:background .2s,color .2s,box-shadow .2s}
+.tab[aria-selected="true"]{background:var(--bark);color:#fff}
+.panel[hidden]{display:none}
+.prod-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;margin-top:2.2rem}
+@media (max-width:920px){.prod-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.prod-grid{grid-template-columns:1fr}}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:1.5rem;display:flex;flex-direction:column;gap:.5rem;transition:border-color .2s,box-shadow .22s,transform .22s var(--ease)}
+.prod:hover{border-color:var(--line-2);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.prod-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.35rem}
+.prod-icon{width:2.3rem;height:2.3rem;border-radius:var(--r-sm);display:grid;place-items:center;background:var(--amber-wash);color:var(--amber);flex:none}
+.prod .h3{color:var(--bark)}
+.prod>p{font-size:.875rem;color:var(--ink-2);line-height:1.55}
+.prod-tag{font-size:.66rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:.22rem .5rem;border:1px solid var(--line);border-radius:999px}
+.prod-meta{margin-top:auto;padding-top:1.1rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;border-top:1px solid var(--line)}
+.prod-rate{font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--brick);letter-spacing:-.025em;line-height:1.05}
+.prod-rate small{font-family:var(--font-sans);font-size:.7rem;font-weight:500;color:var(--muted);letter-spacing:.04em;display:block;margin-top:.3rem;text-transform:uppercase}
+
+/* ---------- rates table ---------- */
+.rates-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,4vw,4rem);align-items:start}
+@media (max-width:920px){.rates-grid{grid-template-columns:1fr}}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;min-width:28rem}
+@media (max-width:560px){.table-card th,.table-card td,.table-card caption,.table-note{padding-inline:1rem}.table-card td{font-size:.84rem}}
+.section.alt .table-card{background:var(--card)}
+.table-card caption{text-align:left;padding:1.15rem 1.4rem;border-bottom:1px solid var(--line);background:var(--paper-2)}
+.table-card caption .h3{color:var(--bark);font-size:1.1rem}
+.table-card caption span{display:block;font-size:.76rem;color:var(--muted);margin-top:.25rem;letter-spacing:.02em}
+.table-card th{text-align:right;font-size:.67rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:.85rem 1.4rem;border-bottom:1px solid var(--line)}
+.table-card th:first-child{text-align:left}
+.table-card td{padding:.72rem 1.4rem;font-size:.9rem;border-bottom:1px solid var(--line);text-align:right;color:var(--bark);font-weight:500}
+.table-card td:first-child{text-align:left;color:var(--ink-2);font-weight:400}
+.table-card tr:last-child td{border-bottom:0}
+.table-card tbody tr{transition:background .15s}
+.table-card tbody tr:hover{background:var(--paper)}
+.table-card tr[data-best] td{background:var(--amber-wash)}
+.table-card tr[data-best] td:first-child{font-weight:600;color:var(--bark)}
+.table-note{font-size:.76rem;color:var(--muted);padding:.9rem 1.4rem;background:var(--paper-2);border-top:1px solid var(--line)}
+
+/* calculator */
+.calc{background:var(--bark);color:#fff;border-radius:var(--r-md);padding:1.6rem;position:sticky;top:6rem}
+.calc .h3{color:#fff}
+.calc label{display:block;font-size:.72rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.45rem}
+.calc-field+.calc-field{margin-top:1.1rem}
+.calc input[type="range"]{width:100%;accent-color:var(--sand);height:1.4rem}
+.calc-val{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:.3rem}
+.calc-val b{font-family:var(--font-display);font-size:1.35rem;font-weight:600;color:#fff;letter-spacing:-.02em}
+.calc-out{margin-top:1.5rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.15);display:grid;gap:.75rem}
+.calc-out div{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;font-size:.86rem;color:rgba(255,255,255,.7)}
+.calc-out strong{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--sand);letter-spacing:-.025em}
+.calc-foot{font-size:.72rem;color:rgba(255,255,255,.5);margin-top:1.2rem;line-height:1.5}
+
+/* ---------- numbers band ---------- */
+.numbers{background:var(--bark);color:#fff;position:relative;overflow:hidden}
+.numbers::before{content:"";position:absolute;inset:0;background:radial-gradient(60rem 30rem at 85% 0%,rgba(165,51,28,.25),transparent 60%)}
+.numbers .wrap{position:relative}
+.num-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.15)}
+@media (max-width:860px){.num-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.2rem}}
+.num{display:flex;flex-direction:column}
+.num dd{order:-1}
+.num b{display:block;font-family:var(--font-display);font-size:clamp(2.2rem,1.4rem + 2.6vw,3.4rem);font-weight:600;color:#fff;letter-spacing:-.035em;line-height:1}
+.num b em{font-style:normal;font-size:.5em;color:var(--sand);margin-right:.1em}
+.num .k{display:block;font-size:.71rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--sand);margin-top:.9rem}
+.num .d{display:block;font-size:.8rem;color:rgba(255,255,255,.55);margin-top:.25rem}
+.numbers .lead{color:rgba(255,255,255,.75);max-width:34rem}
+
+/* ---------- ways to bank ---------- */
+.ways{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem}
+@media (max-width:900px){.ways{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.ways{grid-template-columns:1fr}}
+.way{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:1.5rem;display:flex;flex-direction:column;gap:.5rem;transition:border-color .2s,box-shadow .22s,transform .22s var(--ease)}
+.way:hover{border-color:var(--line-2);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.way-icon{width:2.6rem;height:2.6rem;border-radius:var(--r-sm);background:var(--bark);color:#fff;display:grid;place-items:center;margin-bottom:.6rem}
+.way .h3{color:var(--bark)}
+.way p{font-size:.86rem;color:var(--ink-2);line-height:1.55}
+.way ul{margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--line);display:grid;gap:.3rem}
+.way ul li{font-size:.8rem;color:var(--muted);display:flex;gap:.45rem;align-items:baseline}
+.way ul li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--line-2);flex:none;transform:translateY(-2px)}
+
+/* ---------- notices ---------- */
+.notice-grid{display:grid;grid-template-columns:1fr .9fr;gap:clamp(2rem,4vw,4rem);align-items:start}
+@media (max-width:920px){.notice-grid{grid-template-columns:1fr}}
+.notice-list{border-top:1px solid var(--line)}
+.notice{position:relative;isolation:isolate;display:grid;grid-template-columns:5.4rem 1fr auto;gap:1.2rem;align-items:baseline;padding:1.15rem 0;border-bottom:1px solid var(--line)}
+/* the hover plate bleeds a little past both edges so the date and the arrow sit
+   inside it rather than flush against it; `bottom:1px` keeps the divider visible,
+   and z-index:-1 inside the row's own stacking context keeps it under the text */
+.notice::before{content:"";position:absolute;z-index:-1;top:0;bottom:1px;left:-1rem;right:-1rem;background:var(--card);border-radius:var(--r-sm);opacity:0;transition:opacity .18s}
+.notice:hover::before{opacity:1}
+@media (max-width:620px){.notice::before{left:-.6rem;right:-.6rem}}
+.notice time{font-size:.74rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--brick)}
+.notice .t{font-size:.95rem;color:var(--bark);font-weight:500;line-height:1.45}
+.notice .t span{display:block;font-size:.82rem;color:var(--muted);font-weight:400;margin-top:.15rem}
+.notice svg{color:var(--line-2);transition:color .18s,transform .25s var(--ease);align-self:center}
+.notice:hover svg{color:var(--brick);transform:translateX(3px)}
+@media (max-width:540px){.notice{grid-template-columns:1fr auto;gap:.3rem 1rem}.notice time{grid-column:1/-1}}
+
+.alert-card{background:var(--brick-wash);border:1px solid #f0cdb6;border-radius:var(--r-md);padding:1.6rem}
+.alert-card .h3{color:var(--brick-2);display:flex;align-items:center;gap:.6rem}
+.alert-card>p{font-size:.88rem;color:#6b3320;margin-top:.7rem;line-height:1.6}
+.alert-list{margin-top:1.3rem;display:grid;gap:.1rem}
+.alert-list a{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.72rem .9rem;background:rgba(255,255,255,.65);border:1px solid rgba(165,51,28,.14);border-radius:var(--r-sm);font-size:.875rem;font-weight:500;color:var(--brick-2);transition:background .18s,border-color .18s}
+.alert-list a:hover{background:#fff;border-color:rgba(165,51,28,.35)}
+.alert-list svg{flex:none;opacity:.6}
+.helpline{margin-top:1.3rem;padding-top:1.2rem;border-top:1px solid rgba(165,51,28,.18);display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.helpline b{font-family:var(--font-display);font-size:1.5rem;color:var(--brick-2);font-weight:600;letter-spacing:-.02em}
+.helpline span{font-size:.78rem;color:#7d4530}
+
+/* ---------- awards ---------- */
+.award{display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:center;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.award:first-child{border-top:1px solid var(--line)}
+.award .yr{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--bark);letter-spacing:-.02em;min-width:4.2rem}
+.award .t{font-size:.95rem;color:var(--bark);font-weight:500;line-height:1.45}
+.award .s{font-size:.82rem;color:var(--muted);margin-top:.15rem}
+
+/* ---------- cta band ---------- */
+.cta{background:var(--bark);border-radius:var(--r-lg);padding:clamp(2.2rem,1.5rem + 3vw,4rem);color:#fff;display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,4vw,4rem);align-items:center;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(40rem 24rem at 100% 0%,rgba(165,51,28,.32),transparent 62%)}
+.cta>*{position:relative}
+.cta h2{color:#fff;font-size:var(--text-h2);max-width:16ch}
+.cta p{color:rgba(255,255,255,.75);margin-top:1rem;max-width:36rem}
+.cta-actions{display:flex;flex-direction:column;gap:.7rem}
+@media (max-width:860px){.cta{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+.footer{background:var(--bark);color:rgba(255,255,255,.68);padding-block:clamp(3rem,2.5rem + 2vw,4.5rem) 0;font-size:.875rem}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.1fr;gap:2.2rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.13)}
+@media (max-width:1040px){.footer-top{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem}}
+@media (max-width:560px){.footer-top{grid-template-columns:1fr}}
+.footer h4{font-size:.67rem;font-family:var(--font-sans);font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--sand);margin-bottom:1rem}
+.footer ul a{display:block;padding:.23rem 0;transition:color .15s}
+.footer ul a:hover{color:#fff}
+/* the mark is dark-on-light artwork, so on the espresso footer it sits on a
+   cream plaque rather than being recoloured or knocked out */
+.footer-logo{display:inline-block;background:var(--card);padding:.7rem .9rem;border-radius:var(--r-sm);box-shadow:0 1px 0 rgba(255,255,255,.12)}
+.footer-logo img{height:2.9rem;width:auto}
+.footer address{font-style:normal;line-height:1.7;margin-top:1rem;color:rgba(255,255,255,.62)}
+.footer address b{color:#fff;font-weight:500;display:block;margin-bottom:.2rem;font-size:.8rem;letter-spacing:.02em}
+.socials{display:flex;gap:.5rem;margin-top:1.4rem}
+.socials a{width:2.1rem;height:2.1rem;border-radius:var(--r-sm);border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;color:rgba(255,255,255,.72);transition:background .18s,color .18s,border-color .18s}
+.socials a:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.35)}
+.dicgc{display:flex;align-items:center;gap:.85rem;margin-top:1.6rem;padding:.85rem 1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-sm)}
+.dicgc svg{color:var(--sage);flex:none}
+.dicgc p{font-size:.78rem;line-height:1.5;color:rgba(255,255,255,.72)}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center;padding-block:1.5rem}
+.footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.5)}
+.footer-bottom ul{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.78rem}
+
+/* ---------- concept notice ---------- */
+.concept{background:#20130b;color:rgba(255,255,255,.62);font-size:.76rem;line-height:1.6;padding:1.1rem 0;border-top:1px solid rgba(255,255,255,.1)}
+.concept .wrap{display:flex;gap:1rem;align-items:flex-start}
+.concept b{color:var(--sand);font-weight:600}
+.concept a{text-decoration:underline;text-underline-offset:2px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- ============ utility bar ============ -->
+<div class="utility">
+  <div class="wrap">
+    <div class="ticker" id="ticker">
+      <div class="ticker-track" aria-label="Bank announcements">
+        <span><b>Notice</b> Our official website is www.tjsb.bank.in with effect from 15 August 2025. Please save the new link.</span>
+        <span><b>Credit reporting</b> Information on loan default, if any, will be reported to Credit Information Companies.</span>
+        <span><b>Deposit rates</b> Revised term deposit rates are effective from 21 October 2026.</span>
+        <span aria-hidden="true"><b>Notice</b> Our official website is www.tjsb.bank.in with effect from 15 August 2025. Please save the new link.</span>
+        <span aria-hidden="true"><b>Credit reporting</b> Information on loan default, if any, will be reported to Credit Information Companies.</span>
+        <span aria-hidden="true"><b>Deposit rates</b> Revised term deposit rates are effective from 21 October 2026.</span>
+      </div>
+    </div>
+    <button class="ticker-pause" id="ticker-pause" aria-pressed="false">Pause</button>
+    <ul class="util-links">
+      <li><a href="#rates">Interest rates</a></li>
+      <li><a href="#ways">Branch &amp; ATM</a></li>
+      <li><a href="#security">Grievance</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ header ============ -->
+<header class="header" id="header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="assets/tjsb-logo.png" width="176" height="65" alt="TJSB Sahakari Bank Ltd — Bharose ka Bank, Bhavishya ka Bank. Home">
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav" id="nav">
+        <li data-menu>
+          <button aria-expanded="false" aria-controls="m-accounts">Accounts &amp; deposits
+            <svg class="chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="mega" id="m-accounts">
+            <div class="mega-inner">
+              <div>
+                <h4>Accounts</h4>
+                <ul>
+                  <li><a href="#products">Savings Account</a></li>
+                  <li><a href="#products">Current Account</a></li>
+                  <li><a href="#products">Salary Overdraft Facility</a></li>
+                  <li><a href="#products">Personalised QR Code</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Deposits</h4>
+                <ul>
+                  <li><a href="#rates">Fixed Deposit</a></li>
+                  <li><a href="#rates">Recurring Deposit</a></li>
+                  <li><a href="#rates">Kar-Bachat Scheme</a></li>
+                  <li><a href="#rates">Interest rates</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>NRI banking</h4>
+                <ul>
+                  <li><a href="#products">NRE Account</a></li>
+                  <li><a href="#products">NRO Account</a></li>
+                  <li><a href="#products">FCNR Account</a></li>
+                  <li><a href="#products">NRE Student Account</a></li>
+                  <li><a href="#products">NRI Property Loan</a></li>
+                </ul>
+              </div>
+              <div class="mega-feature">
+                <p class="eyebrow">Term deposits</p>
+                <p class="h3">Up to 7.25% p.a.</p>
+                <p>For senior citizens, above 24 and up to 36 months. Rates effective 21 October 2026.</p>
+                <a class="arrow-link" href="#rates">See the full rate card
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li data-menu>
+          <button aria-expanded="false" aria-controls="m-loans">Loans
+            <svg class="chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="mega" id="m-loans">
+            <div class="mega-inner">
+              <div>
+                <h4>Home &amp; property</h4>
+                <ul>
+                  <li><a href="#products">Housing Loan</a></li>
+                  <li><a href="#products">Flexi Housing</a></li>
+                  <li><a href="#products">Housing Top-Up</a></li>
+                  <li><a href="#products">House Mortgage Loan</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Vehicle &amp; personal</h4>
+                <ul>
+                  <li><a href="#products">Auto Finance</a></li>
+                  <li><a href="#products">TJSB Green Car Loan</a></li>
+                  <li><a href="#products">Two Wheeler Loan</a></li>
+                  <li><a href="#products">Personal Loan</a></li>
+                  <li><a href="#products">Travel Loan</a></li>
+                  <li><a href="#products">Gold Loan</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Business &amp; purpose</h4>
+                <ul>
+                  <li><a href="#products">Commercial Loans</a></li>
+                  <li><a href="#products">Professional Loan</a></li>
+                  <li><a href="#products">Women Entrepreneur Loan</a></li>
+                  <li><a href="#products">TJSB Micro Finance Loan</a></li>
+                  <li><a href="#products">Saur Shakti Loan</a></li>
+                  <li><a href="#products">Education Loan</a></li>
+                </ul>
+              </div>
+              <div class="mega-feature">
+                <p class="eyebrow">Before you apply</p>
+                <p class="h3">Work out the EMI first</p>
+                <p>Set an amount, a rate and a tenure, and see the monthly instalment before you walk into a branch.</p>
+                <a class="arrow-link" href="#calculator">Open the EMI calculator
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li data-menu>
+          <button aria-expanded="false" aria-controls="m-digital">Digital banking
+            <svg class="chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="mega" id="m-digital">
+            <div class="mega-inner">
+              <div>
+                <h4>Everyday</h4>
+                <ul>
+                  <li><a href="#ways">TranZapp — UPI</a></li>
+                  <li><a href="#ways">Internet Banking</a></li>
+                  <li><a href="#ways">Mobile Banking</a></li>
+                  <li><a href="#ways">SMS Banking</a></li>
+                  <li><a href="#ways">BBPS bill payments</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Cards</h4>
+                <ul>
+                  <li><a href="#ways">Debit Card</a></li>
+                  <li><a href="#ways">Debit Card variants</a></li>
+                  <li><a href="#ways">ATM &amp; Debit Card controls</a></li>
+                  <li><a href="#ways">Prepaid Card</a></li>
+                  <li><a href="#ways">RuPay offers</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Other services</h4>
+                <ul>
+                  <li><a href="#products">RTGS &amp; NEFT</a></li>
+                  <li><a href="#products">Forex</a></li>
+                  <li><a href="#products">Demat &amp; ASBA</a></li>
+                  <li><a href="#products">Mutual Fund</a></li>
+                  <li><a href="#products">Insurance</a></li>
+                  <li><a href="#products">Lockers</a></li>
+                </ul>
+              </div>
+              <div class="mega-feature">
+                <p class="eyebrow">New</p>
+                <p class="h3">UPI help centre</p>
+                <p>Payment stuck, refund pending or a wrong transfer? Raise and track it in one place.</p>
+                <a class="arrow-link" href="#security">Get UPI help
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="#about">About us</a></li>
+        <li><a href="#security">Support</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a class="btn btn-outline btn-sm" href="#ways">Branch locator</a>
+      <a class="btn btn-primary btn-sm" href="https://www.tjsb.bank.in/" rel="noreferrer"><span class="cta-long">Net banking</span><span class="cta-short">Login</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <div class="drawer" id="drawer">
+    <div class="wrap">
+      <h4>Accounts &amp; deposits</h4>
+      <a href="#products">Savings Account</a><a href="#products">Current Account</a><a href="#rates">Fixed &amp; Recurring Deposit</a><a href="#products">NRI accounts</a>
+      <h4>Loans</h4>
+      <a href="#products">Housing Loan</a><a href="#products">Auto Finance &amp; Green Car</a><a href="#products">Gold Loan</a><a href="#products">Education Loan</a><a href="#products">Business &amp; micro finance</a>
+      <h4>Digital banking</h4>
+      <a href="#ways">TranZapp UPI</a><a href="#ways">Internet &amp; Mobile Banking</a><a href="#ways">Cards</a><a href="#ways">BBPS bill payments</a>
+      <h4>More</h4>
+      <a href="#rates">Interest rates</a><a href="#about">About us</a><a href="#security">Support &amp; grievance</a>
+      <a class="btn btn-primary btn-block" style="margin-top:1.4rem" href="https://www.tjsb.bank.in/" rel="noreferrer">Net banking login</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<!-- ============ hero ============ -->
+<section class="hero" id="top">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <svg class="hero-arcs" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+    <circle cx="200" cy="200" r="60" stroke="#fff" stroke-width="1"/>
+    <circle cx="200" cy="200" r="110" stroke="#fff" stroke-width="1"/>
+    <circle cx="200" cy="200" r="160" stroke="#fff" stroke-width="1"/>
+    <circle cx="200" cy="200" r="198" stroke="#fff" stroke-width="1"/>
+  </svg>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow on-dark" data-reveal>Multi-state scheduled co-operative bank · Est. 1972</p>
+      <h1 data-reveal>A bank that has kept<br>its word for <span class="accent">53 years</span>.</h1>
+      <p class="lead" data-reveal>TJSB Sahakari Bank began with one branch in Thane in 1972. Today it holds <span class="tnum">&#8377;16,244</span> crore of deposits across <span class="tnum">172</span> branches — and still answers to the people who bank with it.</p>
+      <div class="hero-actions" data-reveal>
+        <a class="btn btn-primary" href="#products">Open an account
+          <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#rates">See today&#8217;s rates</a>
+      </div>
+      <div class="trust" data-reveal>
+        <span class="chip"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5 2 3.6v3.3c0 2.9 2.1 5.1 5 5.6 2.9-.5 5-2.7 5-5.6V3.6L7 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="m5 7 1.5 1.5L9.5 5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Licensed by the Reserve Bank of India</span>
+        <span class="chip"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5 2 3.6v3.3c0 2.9 2.1 5.1 5 5.6 2.9-.5 5-2.7 5-5.6V3.6L7 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="m5 7 1.5 1.5L9.5 5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Deposits insured by DICGC up to &#8377;5 lakh</span>
+        <span class="chip"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5 2 3.6v3.3c0 2.9 2.1 5.1 5 5.6 2.9-.5 5-2.7 5-5.6V3.6L7 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="m5 7 1.5 1.5L9.5 5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Multi-state co-operative licence</span>
+      </div>
+    </div>
+
+    <aside class="rate-card" data-reveal aria-label="Term deposit rates at a glance">
+      <div class="rate-card-head">
+        <p class="eyebrow">Term deposits</p>
+        <p class="small" style="color:var(--ink-2)">w.e.f. 21 Oct 2026</p>
+      </div>
+      <div class="rate-hero">
+        <p class="rate-big tnum">7.25<sup>% p.a.</sup></p>
+        <p class="small" style="margin-top:.7rem">Highest rate on offer — senior citizens, above 24 and up to 36 months, deposits below &#8377;1 crore.</p>
+      </div>
+      <dl class="rate-rows">
+        <div class="rate-row"><span>12 to 24 months</span><b class="tnum">6.75%</b></div>
+        <div class="rate-row"><span>Above 24 to 36 months</span><b class="tnum">7.00%</b></div>
+        <div class="rate-row"><span>Above 36 to 120 months</span><b class="tnum">6.65%</b></div>
+        <div class="rate-row"><span>NRE, 12 to 24 months</span><b class="tnum">6.75%</b></div>
+      </dl>
+      <div class="rate-foot">
+        <p class="small">General rates, below &#8377;1 crore</p>
+        <a class="arrow-link" href="#rates">All tenures
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ quick actions ============ -->
+<section class="quick" aria-label="Common tasks">
+  <div class="wrap">
+    <a class="qa" href="#ways">
+      <span class="qa-icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="4.5" width="15" height="11" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M2.5 8h15" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 12h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+      <span class="qa-label">Pay a bill</span>
+      <span class="qa-sub">Electricity, gas, DTH &amp; more on BBPS</span>
+    </a>
+    <a class="qa" href="#rates">
+      <span class="qa-icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><path d="M3 15.5 7 9l3 3.5L17 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 4h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="qa-label">Open a deposit</span>
+      <span class="qa-sub">Fixed, recurring or Kar-Bachat</span>
+    </a>
+    <a class="qa" href="#calculator">
+      <span class="qa-icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><rect x="4" y="2.5" width="12" height="15" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M7 6h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M7.5 10h.01M10 10h.01M12.5 10h.01M7.5 13.5h.01M10 13.5h.01M12.5 13.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      <span class="qa-label">Calculate an EMI</span>
+      <span class="qa-sub">Before you apply for a loan</span>
+    </a>
+    <a class="qa" href="#ways">
+      <span class="qa-icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><path d="M10 17.5s5.5-4.6 5.5-9a5.5 5.5 0 1 0-11 0c0 4.4 5.5 9 5.5 9Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="10" cy="8.3" r="2.1" stroke="currentColor" stroke-width="1.4"/></svg></span>
+      <span class="qa-label">Find a branch</span>
+      <span class="qa-sub">172 branches and ATMs near you</span>
+    </a>
+    <a class="qa" href="#security">
+      <span class="qa-icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><path d="M10 2.5 3.5 5.3v4.4c0 3.9 2.7 6.8 6.5 7.8 3.8-1 6.5-3.9 6.5-7.8V5.3L10 2.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 7.5v3M10 13h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="qa-label">Report fraud</span>
+      <span class="qa-sub">Block a card or flag a transaction</span>
+    </a>
+    <a class="qa" href="#notices">
+      <span class="qa-icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><path d="M5 2.5h7l3.5 3.5v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M11.5 2.5V6h3.8M7 11h6M7 14h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+      <span class="qa-label">Download a form</span>
+      <span class="qa-sub">KYC, nomination, claims</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ products ============ -->
+<section class="section" id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow" data-reveal>What are you looking for</p>
+        <h2 class="h2" data-reveal>Pick the thing you came here to do</h2>
+      </div>
+      <p class="lead" data-reveal>Every product below is one TJSB already offers. Choose a category and the cards change — nothing is hidden behind a dropdown you have to guess at.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Product categories" data-reveal>
+      <button class="tab" role="tab" id="tab-save" aria-controls="p-save" aria-selected="true">Save</button>
+      <button class="tab" role="tab" id="tab-borrow" aria-controls="p-borrow" aria-selected="false">Borrow</button>
+      <button class="tab" role="tab" id="tab-business" aria-controls="p-business" aria-selected="false">Business</button>
+      <button class="tab" role="tab" id="tab-nri" aria-controls="p-nri" aria-selected="false">NRI</button>
+    </div>
+
+    <div class="panel" id="p-save" role="tabpanel" aria-labelledby="tab-save" tabindex="0">
+      <div class="prod-grid">
+        <article class="prod" data-reveal>
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 7.5 10 3.5l7 4v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7.5 16.5v-5h5v5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="prod-tag">Everyday</span></div>
+          <h3 class="h3">Savings Account</h3>
+          <p>A straightforward savings account with a debit card, UPI through TranZapp, and internet and mobile banking from day one.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Open an account <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod" data-reveal>
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="10" r="2.2" stroke="currentColor" stroke-width="1.4"/><path d="M6 8v4M14 8v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="prod-tag">Term</span></div>
+          <h3 class="h3">Fixed Deposit</h3>
+          <p>Tenures from seven days to ten years, interest compounded quarterly on reinvestment, and a quarter-point extra for senior citizens.</p>
+          <div class="prod-meta"><span class="prod-rate tnum">7.25%<small>Up to, p.a.</small></span><a class="arrow-link" href="#rates">Rates <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod" data-reveal>
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 16.5V9M8 16.5V5.5M12 16.5v-9M16 16.5v-13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="prod-tag">Monthly</span></div>
+          <h3 class="h3">Recurring Deposit</h3>
+          <p>Put aside a fixed sum every month. Interest is compounded quarterly, at the same rate as a term deposit of the same tenure.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#rates">See tenures <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod" data-reveal>
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M10 6v4l2.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="prod-tag">Scheme</span></div>
+          <h3 class="h3">Kar-Bachat Scheme</h3>
+          <p>A tax-saving term deposit under section 80C, with the lock-in and limits the scheme requires. Ask a branch for the current terms.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Know more <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod" data-reveal>
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3.5" y="4" width="13" height="12" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M3.5 8h13" stroke="currentColor" stroke-width="1.4"/><circle cx="13" cy="12" r="1.3" stroke="currentColor" stroke-width="1.3"/></svg></span><span class="prod-tag">Card</span></div>
+          <h3 class="h3">RuPay Debit Card</h3>
+          <p>EMV chip cards with controls you set yourself — switch online, ATM, POS or contactless use on and off, and set your own limits.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#ways">Card variants <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod" data-reveal>
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="4.5" y="3" width="11" height="14" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 14h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="prod-tag">Locker</span></div>
+          <h3 class="h3">Safe Deposit Locker</h3>
+          <p>Lockers at branches across the network, with published rent and the safe-deposit agreement the RBI requires.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#ways">Check availability <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel" id="p-borrow" role="tabpanel" aria-labelledby="tab-borrow" tabindex="0" hidden>
+      <div class="prod-grid">
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 8.5 10 3.5l7 5v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="prod-tag">Secured</span></div>
+          <h3 class="h3">Housing Loan</h3>
+          <p>For buying, building or extending a home — with Flexi Housing and a Housing Top-Up for borrowers already on the books.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#calculator">Work out the EMI <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 12.5h14l-1-4H4l-1 4Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5 8.5 6.5 5h7L15 8.5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="6" cy="14" r="1.3" stroke="currentColor" stroke-width="1.3"/><circle cx="14" cy="14" r="1.3" stroke="currentColor" stroke-width="1.3"/></svg></span><span class="prod-tag">Vehicle</span></div>
+          <h3 class="h3">Auto Finance</h3>
+          <p>New and used cars, two-wheelers, and the TJSB Green Car Loan for electric and hybrid vehicles.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#calculator">Work out the EMI <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="m10 3.5 7.5 3.8L10 11 2.5 7.3 10 3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 9v4.2c0 .9 2 2.3 4.5 2.3s4.5-1.4 4.5-2.3V9" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="prod-tag">Education</span></div>
+          <h3 class="h3">Education Loan</h3>
+          <p>For study in India or abroad, covering tuition, living costs and the expenses an admission letter actually comes with.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Eligibility <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M10 6.5v7M8 8.5h4M8 11.5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="prod-tag">Against gold</span></div>
+          <h3 class="h3">Gold Loan</h3>
+          <p>Borrow against jewellery held in the bank&#8217;s custody, valued at the branch, with the terms set out before you sign.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">How it works <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M4.5 16.5c0-3 2.5-4.5 5.5-4.5s5.5 1.5 5.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="prod-tag">Personal</span></div>
+          <h3 class="h3">Personal &amp; Professional Loan</h3>
+          <p>Unsecured borrowing for salaried customers and practising professionals, plus a Travel Loan and a Salary Overdraft Facility.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#calculator">Work out the EMI <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M10 2.5v2M10 15.5v2M17.5 10h-2M4.5 10h-2M15.3 4.7l-1.4 1.4M6.1 13.9l-1.4 1.4M15.3 15.3l-1.4-1.4M6.1 6.1 4.7 4.7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="prod-tag">Green</span></div>
+          <h3 class="h3">Saur Shakti Loan</h3>
+          <p>Finance for rooftop solar — for households and businesses putting panels on their own premises.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Know more <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel" id="p-business" role="tabpanel" aria-labelledby="tab-business" tabindex="0" hidden>
+      <div class="prod-grid">
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="6.5" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 6.5v-1a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v1" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="prod-tag">Everyday</span></div>
+          <h3 class="h3">Current Account</h3>
+          <p>For traders, firms and companies — with RTGS, NEFT, a personalised QR code for collections and GST payment facility.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Open an account <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 16.5h14M5 16.5V8M9 16.5V8M11 16.5V8M15 16.5V8M3 8l7-4.5L17 8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="prod-tag">Credit</span></div>
+          <h3 class="h3">Commercial Loans</h3>
+          <p>Working capital and term credit for businesses, including cash credit and overdraft facilities against stock and receivables.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Talk to a branch <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M3 10h14M10 3a11 11 0 0 1 0 14 11 11 0 0 1 0-14Z" stroke="currentColor" stroke-width="1.3"/></svg></span><span class="prod-tag">Trade</span></div>
+          <h3 class="h3">Forex &amp; cross-border</h3>
+          <p>Foreign exchange for importers and exporters, FX-Retail through CCIL, forex cards and the SOP for FEMA 23(R).</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Card rates <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="7.5" cy="7" r="2.6" stroke="currentColor" stroke-width="1.4"/><path d="M3 16c0-2.5 2-3.8 4.5-3.8S12 13.5 12 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M13.5 6.2a2.6 2.6 0 0 1 0 5M14.5 12.5c1.7.4 2.8 1.6 2.8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="prod-tag">Inclusion</span></div>
+          <h3 class="h3">Micro Finance &amp; Women Entrepreneur</h3>
+          <p>Small-ticket credit for self-help groups and a dedicated line for women running their own businesses.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Know more <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 16.5V9M8 16.5V5.5M12 16.5v-9M16 16.5v-13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="prod-tag">Markets</span></div>
+          <h3 class="h3">Demat, ASBA &amp; Mutual Fund</h3>
+          <p>A demat account, ASBA for public issues and mutual fund distribution, through the bank you already use.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Open demat <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2.5 3.5 5.3v4.4c0 3.9 2.7 6.8 6.5 7.8 3.8-1 6.5-3.9 6.5-7.8V5.3L10 2.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="prod-tag">Cover</span></div>
+          <h3 class="h3">Insurance &amp; Government schemes</h3>
+          <p>Life and general insurance distribution, plus the Pradhan Mantri schemes and the CLCS subsidy for small industry.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">See schemes <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel" id="p-nri" role="tabpanel" aria-labelledby="tab-nri" tabindex="0" hidden>
+      <div class="prod-grid">
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M3 10h14M10 3a11 11 0 0 1 0 14 11 11 0 0 1 0-14Z" stroke="currentColor" stroke-width="1.3"/></svg></span><span class="prod-tag">Repatriable</span></div>
+          <h3 class="h3">NRE Account</h3>
+          <p>Hold your overseas earnings in rupees, fully repatriable. Term deposits from 12 months earn 6.75% p.a. and up.</p>
+          <div class="prod-meta"><span class="prod-rate tnum">7.00%<small>Up to, p.a.</small></span><a class="arrow-link" href="#rates">Rates <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M3 9h14" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="prod-tag">Indian income</span></div>
+          <h3 class="h3">NRO Account</h3>
+          <p>For income that arises in India — rent, dividends, a pension — with repatriation within the limits the rules allow.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Open an account <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M6 10h8M10 6v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="prod-tag">Foreign currency</span></div>
+          <h3 class="h3">FCNR (B) Deposit</h3>
+          <p>Keep the deposit in USD, GBP, EUR, CAD, AUD or SGD and avoid the exchange risk. USD earns 4.89% for one to two years.</p>
+          <div class="prod-meta"><span class="prod-rate tnum">4.89%<small>USD, 1&#8211;2 yrs</small></span><a class="arrow-link" href="#rates">All currencies <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="m10 3.5 7.5 3.8L10 11 2.5 7.3 10 3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 9v4.2c0 .9 2 2.3 4.5 2.3s4.5-1.4 4.5-2.3V9" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="prod-tag">Students</span></div>
+          <h3 class="h3">NRE Student Account</h3>
+          <p>For students who have moved abroad to study and need an account at home that keeps working while they are away.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Know more <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 8.5 10 3.5l7 5v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="prod-tag">Property</span></div>
+          <h3 class="h3">NRI Property Loan</h3>
+          <p>Finance for a home in India while you are living abroad, with documentation handled through your branch of record.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#calculator">Work out the EMI <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+        <article class="prod">
+          <div class="prod-top"><span class="prod-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="prod-tag">Transfers</span></div>
+          <h3 class="h3">Remittances</h3>
+          <p>Send money home through the bank&#8217;s correspondent arrangements, with the charges published before you commit.</p>
+          <div class="prod-meta"><a class="arrow-link" href="#">Charges <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ rates + calculator ============ -->
+<section class="section alt" id="rates">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow" data-reveal>Interest rates</p>
+        <h2 class="h2" data-reveal>Every tenure, on one page</h2>
+      </div>
+      <p class="lead" data-reveal>Domestic term deposits below &#8377;1 crore, as published by the bank with effect from 21 October 2026. Senior citizen rates do not apply to NRE and NRO deposits.</p>
+    </div>
+
+    <div class="rates-grid">
+      <div data-reveal>
+        <div class="table-wrap">
+        <table class="table-card">
+          <caption>
+            <span class="h3">Domestic term deposits</span>
+            <span>General and senior citizen rates, per annum, for deposits below &#8377;1 crore &#183; w.e.f. 21 October 2026</span>
+          </caption>
+          <thead>
+            <tr><th scope="col">Tenure</th><th scope="col">General</th><th scope="col">Senior citizen</th></tr>
+          </thead>
+          <tbody class="tnum">
+            <tr><td>7 to 14 days</td><td>3.75%</td><td>3.75%</td></tr>
+            <tr><td>15 days</td><td>4.75%</td><td>4.75%</td></tr>
+            <tr><td>16 to 90 days</td><td>4.50%</td><td>4.50%</td></tr>
+            <tr><td>91 to 180 days</td><td>4.75%</td><td>4.75%</td></tr>
+            <tr><td>181 days to under 12 months</td><td>6.00%</td><td>6.00%</td></tr>
+            <tr><td>12 to 24 months</td><td>6.75%</td><td>7.00%</td></tr>
+            <tr data-best><td>Above 24 to 36 months</td><td>7.00%</td><td>7.25%</td></tr>
+            <tr><td>Above 36 to 120 months</td><td>6.65%</td><td>6.90%</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="table-note">Interest on reinvestment term deposits and recurring deposits is compounded quarterly. Monthly payouts are at discounted value; quarterly, half-yearly and yearly payouts are simple interest. Bulk deposits of &#8377;1 crore and above are quoted separately.</p>
+
+        <div class="table-wrap" style="margin-top:1.4rem">
+        <table class="table-card">
+          <caption>
+            <span class="h3">FCNR (B) and RFC deposits</span>
+            <span>Per annum, by currency &#183; w.e.f. 1 November 2026</span>
+          </caption>
+          <thead>
+            <tr><th scope="col">Period</th><th scope="col">USD</th><th scope="col">GBP</th><th scope="col">EUR</th><th scope="col">AUD</th></tr>
+          </thead>
+          <tbody class="tnum">
+            <tr><td>1 to under 2 years</td><td>4.89</td><td>3.18</td><td>1.94</td><td>3.85</td></tr>
+            <tr><td>2 to under 3 years</td><td>4.35</td><td>2.66</td><td>1.69</td><td>3.60</td></tr>
+            <tr><td>3 to under 4 years</td><td>3.65</td><td>2.36</td><td>1.44</td><td>3.35</td></tr>
+            <tr><td>4 to under 5 years</td><td>3.05</td><td>2.26</td><td>1.19</td><td>3.15</td></tr>
+            <tr><td>5 years only</td><td>2.60</td><td>2.01</td><td>0.94</td><td>2.60</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="table-note">CAD and SGD rates are published on the full rate card. Rates are indicative of the published schedule and are subject to change.</p>
+      </div>
+
+      <form class="calc" id="calculator" data-reveal>
+        <p class="eyebrow on-dark">Loan EMI calculator</p>
+        <p class="h3" style="margin-top:.5rem">What would it cost a month?</p>
+
+        <div class="calc-field" style="margin-top:1.6rem">
+          <label for="amt">Loan amount</label>
+          <div class="calc-val"><b class="tnum" id="amt-out">&#8377;25,00,000</b><span class="small" style="color:rgba(255,255,255,.5)">&#8377;1L&#8211;&#8377;1Cr</span></div>
+          <input type="range" id="amt" min="100000" max="10000000" step="100000" value="2500000">
+        </div>
+
+        <div class="calc-field">
+          <label for="rate">Interest rate (p.a.)</label>
+          <div class="calc-val"><b class="tnum" id="rate-out">9.00%</b><span class="small" style="color:rgba(255,255,255,.5)">6%&#8211;18%</span></div>
+          <input type="range" id="rate" min="6" max="18" step="0.05" value="9">
+        </div>
+
+        <div class="calc-field">
+          <label for="yrs">Tenure</label>
+          <div class="calc-val"><b class="tnum" id="yrs-out">20 years</b><span class="small" style="color:rgba(255,255,255,.5)">1&#8211;30 yrs</span></div>
+          <input type="range" id="yrs" min="1" max="30" step="1" value="20">
+        </div>
+
+        <div class="calc-out">
+          <div><span>Monthly instalment</span><strong class="tnum" id="emi-out">&#8377;22,493</strong></div>
+          <div><span>Total interest</span><span class="tnum" id="int-out" style="color:#fff">&#8377;28,98,257</span></div>
+          <div><span>Total payable</span><span class="tnum" id="tot-out" style="color:#fff">&#8377;53,98,257</span></div>
+        </div>
+        <p class="calc-foot">An illustration only, on reducing balance. The rate you are offered depends on the product, the security and your credit assessment. Processing fees and insurance are not included.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ numbers ============ -->
+<section class="numbers section" id="about">
+  <div class="wrap">
+    <p class="eyebrow on-dark" data-reveal>The bank in figures</p>
+    <h2 class="h2" style="color:#fff;max-width:18ch;margin-top:.8rem" data-reveal>From one branch in Thane to a multi-state bank</h2>
+    <p class="lead" style="margin-top:1.2rem" data-reveal>The first branch of Thane Janata Sahakari Bank opened in 1972. Five decades on, TJSB Sahakari Bank Ltd is one of the country&#8217;s larger multi-state scheduled co-operative banks — still governed by its members, still audited and supervised under the co-operative framework.</p>
+
+    <dl class="num-grid">
+      <div class="num" data-reveal><dt><span class="k">Branches</span><span class="d">Across the states it operates in</span></dt><dd><b class="tnum">172</b></dd></div>
+      <div class="num" data-reveal><dt><span class="k">Business mix</span><span class="d">Deposits and advances together</span></dt><dd><b class="tnum"><em>&#8377;</em>25,360<span style="font-size:.5em"> Cr</span></b></dd></div>
+      <div class="num" data-reveal><dt><span class="k">Deposits</span><span class="d">Held on behalf of customers</span></dt><dd><b class="tnum"><em>&#8377;</em>16,244<span style="font-size:.5em"> Cr</span></b></dd></div>
+      <div class="num" data-reveal><dt><span class="k">Net profit</span><span class="d">As reported by the bank</span></dt><dd><b class="tnum"><em>&#8377;</em>155<span style="font-size:.5em"> Cr</span></b></dd></div>
+    </dl>
+    <p class="small" style="color:rgba(255,255,255,.45);margin-top:1.6rem">Figures as published by the bank under &#8220;Milestones&#8221;. Audited financials and the ten-year progress statement are in the Financials section.</p>
+  </div>
+</section>
+
+<!-- ============ ways to bank ============ -->
+<section class="section" id="ways">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow" data-reveal>Ways to bank</p>
+        <h2 class="h2" data-reveal>Use the branch, or never go near one</h2>
+      </div>
+      <p class="lead" data-reveal>Four ways in, all of them doing the same job. Which one you use is up to you.</p>
+    </div>
+
+    <div class="ways">
+      <article class="way" data-reveal>
+        <span class="way-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 16.5h14M4.5 16.5V8.5M8 16.5V8.5M12 16.5V8.5M15.5 16.5V8.5M2.5 8.5 10 3.5l7.5 5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
+        <h3 class="h3">Branch banking</h3>
+        <p>172 branches with people who can actually decide something. Cheque depository machines take deposits outside counter hours.</p>
+        <ul><li>Branch and ATM locator</li><li>Lockers and safe deposit</li><li>Holiday list and timings</li></ul>
+      </article>
+      <article class="way" data-reveal>
+        <span class="way-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="5.5" y="2.5" width="9" height="15" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M8.8 14.8h2.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <h3 class="h3">Mobile banking</h3>
+        <p>Balances, transfers, deposits and card controls from the app — and TranZapp for UPI payments and collections.</p>
+        <ul><li>TranZapp UPI</li><li>Card on/off controls</li><li>SMS banking for balances</li></ul>
+      </article>
+      <article class="way" data-reveal>
+        <span class="way-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="4" width="15" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M7 17h6M10 14v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+        <h3 class="h3">Internet banking</h3>
+        <p>The full set — RTGS and NEFT, standing instructions, statements, tax payments and the forms you would otherwise queue for.</p>
+        <ul><li>RTGS &amp; NEFT</li><li>GST and tax payments</li><li>Positive Pay for cheques</li></ul>
+      </article>
+      <article class="way" data-reveal>
+        <span class="way-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="5.5" height="5.5" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="11.5" y="3" width="5.5" height="5.5" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="3" y="11.5" width="5.5" height="5.5" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M11.5 11.5h2.5v2.5M17 14v3h-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 class="h3">UPI &amp; bill payments</h3>
+        <p>Pay anyone with a UPI ID, collect with a personalised QR code, and settle utilities through BBPS in one place.</p>
+        <ul><li>Personalised QR code</li><li>BBPS bill payments</li><li>UPI help centre</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ notices + security ============ -->
+<section class="section alt" id="notices">
+  <div class="wrap">
+    <div class="notice-grid">
+      <div>
+        <p class="eyebrow" data-reveal>Notices &amp; announcements</p>
+        <h2 class="h2" style="margin-top:.8rem;max-width:14ch" data-reveal>What the bank has put on record</h2>
+        <div class="notice-list" style="margin-top:2rem">
+          <a class="notice" href="#" data-reveal>
+            <time datetime="2025-08-15">15 Aug 2025</time>
+            <span class="t">Our official website is now www.tjsb.bank.in<span>Please save the new link. The move follows the RBI&#8217;s directions on the bank.in domain.</span></span>
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="notice" href="#rates" data-reveal>
+            <time datetime="2026-10-21">21 Oct 2026</time>
+            <span class="t">Revised interest rates on domestic term deposits<span>Applicable to deposits below &#8377;1 crore, including senior citizen rates.</span></span>
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="notice" href="#rates" data-reveal>
+            <time datetime="2026-11-01">01 Nov 2026</time>
+            <span class="t">FCNR (B) and RFC deposit rates revised<span>New rates by currency for USD, GBP, EUR, CAD, AUD and SGD.</span></span>
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="notice" href="#" data-reveal>
+            <time>Standing</time>
+            <span class="t">Reporting of loan defaults to Credit Information Companies<span>Information with respect to loan default, if any, will be updated with CICs by the bank.</span></span>
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="notice" href="#" data-reveal>
+            <time>Standing</time>
+            <span class="t">Link your PAN with Aadhaar<span>Required to keep your account fully operative and to avoid higher tax deduction at source.</span></span>
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="notice" href="#" data-reveal>
+            <time>Standing</time>
+            <span class="t">Register a nominee on every account and locker<span>It saves your family a great deal of difficulty later. Forms are in the Form Centre.</span></span>
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="notice" href="#" data-reveal>
+            <time>Standing</time>
+            <span class="t">Unclaimed deposits and inoperative accounts<span>Search the list and claim what is yours, as required by the RBI.</span></span>
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <a class="arrow-link" style="margin-top:1.6rem" href="#">All notices and circulars
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div id="security">
+        <div class="alert-card" data-reveal>
+          <h3 class="h3">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.5 3.5 5.3v4.4c0 3.9 2.7 6.8 6.5 7.8 3.8-1 6.5-3.9 6.5-7.8V5.3L10 2.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 7v3.5M10 13h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            If something is wrong
+          </h3>
+          <p>The bank will never ask you for your PIN, password, OTP or card details — not by phone, not by SMS, not by email. If someone does, it is not us.</p>
+          <div class="alert-list">
+            <a href="#">Report an unauthorised transaction <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#">Block a lost or stolen card <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#">Lodge a complaint <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#">Grievance redressal and the Banking Ombudsman <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#">UPI help — payments, refunds and wrong transfers <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+          <div class="helpline">
+            <div>
+              <b class="tnum">1930</b>
+              <span style="display:block">National cyber crime helpline</span>
+            </div>
+            <div style="text-align:right">
+              <b class="tnum">022 69368500</b>
+              <span style="display:block">TJSB corporate office</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:1.4rem" data-reveal>
+          <p class="eyebrow">Recognition</p>
+          <div class="award">
+            <span class="yr tnum">16th</span>
+            <span><span class="t">Runner-up, Best Technology Bank of the Year</span><span class="s">IBA Banking Technology Awards, among co-operative banks</span></span>
+          </div>
+          <div class="award">
+            <span class="yr tnum">1972</span>
+            <span><span class="t">Thane Janata Sahakari Bank opens its first branch</span><span class="s">The beginning of what is now a multi-state scheduled bank</span></span>
+          </div>
+          <div class="award">
+            <span class="yr">DICGC</span>
+            <span><span class="t">Deposits insured up to &#8377;5 lakh per depositor</span><span class="s">Deposit Insurance and Credit Guarantee Corporation, a subsidiary of the RBI</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ cta ============ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta" data-reveal>
+      <div>
+        <p class="eyebrow on-dark">Open an account</p>
+        <h2 style="margin-top:.9rem">Start at a branch, or start on your phone</h2>
+        <p>Digital account opening is live. Have your PAN, Aadhaar and a signature ready, and a branch will pick it up from there.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary btn-block" href="#products">Open a savings account
+          <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost btn-block" href="#ways">Find your nearest branch</a>
+        <p class="small" style="color:rgba(255,255,255,.5);margin-top:.4rem">Account opening is subject to KYC. Terms apply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ footer ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/tjsb-logo.png" width="176" height="65" alt="TJSB Sahakari Bank Ltd — Bharose ka Bank, Bhavishya ka Bank">
+        </div>
+        <address>
+          <b>Corporate office</b>
+          TJSB House, Plot No. B-5, Road No. 2,<br>
+          Wagle Industrial Estate, Thane (W) &#8211; 400604<br>
+          <a href="#">022 69368500</a> &#183; <a href="#">response@tjsb.co.in</a>
+        </address>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.5 15V9h2l.3-2.3H9.5V5.2c0-.66.2-1.1 1.14-1.1h1.22V2.05C11.65 2.03 10.93 2 10.1 2 8.37 2 7.2 3.05 7.2 4.98V6.7H5v2.3h2.2V15h2.3Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="3.2" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="8" r="2.6" stroke="currentColor" stroke-width="1.3"/><circle cx="11.3" cy="4.7" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="X"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M12.1 2h2.2l-4.8 5.5 5.6 7.4h-4.4l-3.4-4.5-3.9 4.5H1.2l5.1-5.9L1 2h4.5l3.1 4.1L12.1 2Zm-.8 11.6h1.2L4.8 3.3H3.5l7.8 10.3Z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M15 5.2a1.9 1.9 0 0 0-1.3-1.3C12.5 3.5 8 3.5 8 3.5s-4.5 0-5.7.4A1.9 1.9 0 0 0 1 5.2C.6 6.4.6 8 .6 8s0 1.6.4 2.8a1.9 1.9 0 0 0 1.3 1.3c1.2.4 5.7.4 5.7.4s4.5 0 5.7-.4a1.9 1.9 0 0 0 1.3-1.3c.4-1.2.4-2.8.4-2.8s0-1.6-.4-2.8ZM6.6 10.3V5.7L10.4 8l-3.8 2.3Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.3 13.5V6.2H2V13.5h2.3ZM3.15 5.2a1.33 1.33 0 1 0 0-2.67 1.33 1.33 0 0 0 0 2.67ZM14 13.5V9.4c0-2.2-1.17-3.22-2.74-3.22-1.26 0-1.83.7-2.14 1.19V6.2H6.8c.03.65 0 7.3 0 7.3h2.32V9.42c0-.21.01-.42.08-.57.18-.41.56-.84 1.21-.84.86 0 1.2.65 1.2 1.6v3.89H14Z"/></svg></a>
+        </div>
+        <div class="dicgc">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.5 3.5 5.3v4.4c0 3.9 2.7 6.8 6.5 7.8 3.8-1 6.5-3.9 6.5-7.8V5.3L10 2.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="m7.3 10 1.9 1.9 3.6-3.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>Registered with DICGC. Deposits are insured up to &#8377;5,00,000 per depositor.</p>
+        </div>
+      </div>
+
+      <div>
+        <h4>About us</h4>
+        <ul>
+          <li><a href="#about">The bank</a></li>
+          <li><a href="#">Progress at a glance</a></li>
+          <li><a href="#">Board of Directors</a></li>
+          <li><a href="#">Board of Management</a></li>
+          <li><a href="#">Chairman&#8217;s note</a></li>
+          <li><a href="#">Financials</a></li>
+          <li><a href="#">Awards &amp; achievements</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#products">Savings Account</a></li>
+          <li><a href="#products">Current Account</a></li>
+          <li><a href="#rates">Deposits</a></li>
+          <li><a href="#products">Retail loans</a></li>
+          <li><a href="#products">Commercial loans</a></li>
+          <li><a href="#ways">Debit cards</a></li>
+          <li><a href="#products">Forex</a></li>
+          <li><a href="#ways">BBPS</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Useful links</h4>
+        <ul>
+          <li><a href="#calculator">Loan EMI calculator</a></li>
+          <li><a href="#calculator">Term deposit calculator</a></li>
+          <li><a href="#rates">Interest rates</a></li>
+          <li><a href="#">Service charges &amp; fees</a></li>
+          <li><a href="#">Form centre</a></li>
+          <li><a href="#">Policy centre</a></li>
+          <li><a href="#">Unclaimed deposits</a></li>
+          <li><a href="#">FATCA &amp; CRS</a></li>
+          <li><a href="#">Auctions &amp; SARFAESI</a></li>
+          <li><a href="#">Holidays</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="#security">Contact us</a></li>
+          <li><a href="#security">Grievance redressal</a></li>
+          <li><a href="#security">Lodge a complaint</a></li>
+          <li><a href="#security">Report an unauthorised transaction</a></li>
+          <li><a href="#security">Report fraud on the NCRP portal</a></li>
+          <li><a href="#ways">Branch locator</a></li>
+          <li><a href="#">Citizens&#8217; charter</a></li>
+          <li><a href="#">Customer awareness</a></li>
+          <li><a href="#">Fair practices code</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&#169; 2026 TJSB Sahakari Bank Ltd. All rights reserved.</p>
+      <ul>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Terms of use</a></li>
+        <li><a href="#">Disclaimer</a></li>
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<div class="concept">
+  <div class="wrap">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex:none;margin-top:.15rem;color:var(--sand)"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4"/><path d="M10 6.5v4.5M10 13.5h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <p>
+      <b>This is a design concept, not a bank.</b>
+      A redesign of the TJSB Sahakari Bank homepage by PulpLabs. It is not the official site, is not affiliated with or endorsed by TJSB Sahakari Bank Ltd, and cannot be used to bank. Nothing here accepts a login, an OTP, a card number or an account number &#8212; the net banking button goes to the real site at
+      <a href="https://www.tjsb.bank.in/" rel="noreferrer">www.tjsb.bank.in</a>. Figures, rates and notices were taken from the bank&#8217;s public pages in November 2026 and are reproduced for illustration only; the published rate card on the official site governs.
+    </p>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- scroll reveals: one IntersectionObserver, runs once ---- */
+  var els = document.querySelectorAll("[data-reveal]");
+  if ("IntersectionObserver" in window && document.documentElement.classList.contains("motion-ok")) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add("is-in"); });
+  }
+  window.__motionReady = true;
+
+  /* ---- header: solid once scrolled ---- */
+  var header = document.getElementById("header");
+  var onScroll = function(){ header.dataset.stuck = window.scrollY > 24 ? "true" : "false"; };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  /* ---- ticker pause (WCAG 2.2.2) ---- */
+  var ticker = document.getElementById("ticker"), tbtn = document.getElementById("ticker-pause");
+  if (ticker && tbtn) {
+    tbtn.addEventListener("click", function(){
+      var paused = ticker.dataset.paused === "true";
+      ticker.dataset.paused = paused ? "false" : "true";
+      tbtn.setAttribute("aria-pressed", paused ? "false" : "true");
+      tbtn.textContent = paused ? "Pause" : "Play";
+    });
+  }
+
+  /* ---- mega menus: hover on pointer devices, click and Esc everywhere ---- */
+  var items = document.querySelectorAll("#nav li[data-menu]");
+  var closeAll = function(except){
+    items.forEach(function(li){
+      if (li === except) return;
+      li.dataset.open = "false";
+      var b = li.querySelector("button"); if (b) b.setAttribute("aria-expanded", "false");
+    });
+  };
+  items.forEach(function(li){
+    var btn = li.querySelector("button");
+    btn.addEventListener("click", function(){
+      var open = li.dataset.open === "true";
+      closeAll(li);
+      li.dataset.open = open ? "false" : "true";
+      btn.setAttribute("aria-expanded", open ? "false" : "true");
+    });
+    li.addEventListener("focusout", function(e){
+      if (!li.contains(e.relatedTarget)) { li.dataset.open = "false"; btn.setAttribute("aria-expanded", "false"); }
+    });
+  });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") { closeAll(null); closeDrawer(); } });
+  document.addEventListener("click", function(e){ if (!e.target.closest("#nav")) closeAll(null); });
+
+  /* ---- mobile drawer ---- */
+  var burger = document.getElementById("burger"), drawer = document.getElementById("drawer");
+  function closeDrawer(){ drawer.dataset.open = "false"; burger.setAttribute("aria-expanded", "false"); }
+  burger.addEventListener("click", function(){
+    var open = drawer.dataset.open === "true";
+    drawer.dataset.open = open ? "false" : "true";
+    burger.setAttribute("aria-expanded", open ? "false" : "true");
+  });
+  drawer.addEventListener("click", function(e){ if (e.target.closest("a")) closeDrawer(); });
+
+  /* ---- product tabs ---- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function select(tab){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  tabs.forEach(function(tab, i){
+    tab.tabIndex = tab.getAttribute("aria-selected") === "true" ? 0 : -1;
+    tab.addEventListener("click", function(){ select(tab); });
+    tab.addEventListener("keydown", function(e){
+      var n = e.key === "ArrowRight" ? i + 1 : e.key === "ArrowLeft" ? i - 1 : -1;
+      if (n < 0 || n >= tabs.length) return;
+      e.preventDefault(); tabs[n].focus(); select(tabs[n]);
+    });
+  });
+
+  /* ---- EMI calculator ---- */
+  var amt = document.getElementById("amt"), rate = document.getElementById("rate"), yrs = document.getElementById("yrs");
+  var inr = function(n){ return "₹" + Math.round(n).toLocaleString("en-IN"); };
+  function lakhCrore(n){
+    if (n >= 10000000) return "₹" + (n / 10000000).toFixed(n % 10000000 ? 2 : 0) + " Cr";
+    return "₹" + (n / 100000).toFixed(n % 100000 ? 1 : 0) + " L";
+  }
+  function calc(){
+    var P = +amt.value, r = +rate.value / 1200, n = +yrs.value * 12;
+    var emi = r === 0 ? P / n : P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    var total = emi * n;
+    document.getElementById("amt-out").textContent = lakhCrore(P);
+    document.getElementById("rate-out").textContent = (+rate.value).toFixed(2) + "%";
+    document.getElementById("yrs-out").textContent = yrs.value + (yrs.value === "1" ? " year" : " years");
+    document.getElementById("emi-out").textContent = inr(emi);
+    document.getElementById("int-out").textContent = inr(total - P);
+    document.getElementById("tot-out").textContent = inr(total);
+  }
+  [amt, rate, yrs].forEach(function(el){ el.addEventListener("input", calc); });
+  calc();
+})();
+</script>
+</body>
+</html>
